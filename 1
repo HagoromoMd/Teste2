@@ -160,11 +160,11 @@ game:GetService("ReplicatedStorage").Remote.Event.RebirthShop:FindFirstChild("[C
     PremiumOnly = false
 })
 
-local Section1 = PLAYERTab:AddSection({
+local Section = PLAYERTab:AddSection({
     Name = "AUTO-FARM"
 })
 
-local AUTOWINToggle = Section1:AddToggle({
+local Toggle = PLAYERTab:AddToggle({
     Name = "CLICK",
     Default = false,
     Callback = function(Value)
@@ -174,7 +174,7 @@ local AUTOWINToggle = Section1:AddToggle({
 })
 
 
-local AUTOWINToggle2 = Section2:AddToggle({
+local Toggle = PLAYERTab:AddToggle({
     Name = "WIN",
     Default = false,
     Callback = function(Value)
@@ -184,17 +184,17 @@ local AUTOWINToggle2 = Section2:AddToggle({
 })
 
 
-local AUTOWINToggle3 = PLAYERTab:AddToggle({
+local Toggle = PLAYERTab:AddToggle({
     Name = " AUTO-SPINS",
     Default = false,
     Callback = function(Value)
         _G.spins = Value
-        spins()
+        spins() 
     end
 })
 
 
-local AUTOWINToggle4 = PLAYERTab:AddToggle({
+local Toggle = PLAYERTab:AddToggle({
     Name = "AUTO-BOX",
     Default = false,
     Callback = function(Value)
