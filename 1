@@ -1,0 +1,799 @@
+if game.PlaceId == 13370783664 then
+    local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/RayzMd/Energy-shock-simulator/main/SyniX"))()
+   local Window = OrionLib:MakeWindow({Name = "Synix (Beta) |Energy-shock-simulator", HidePremium = false, SaveConfig = false, ConfigFolder = "Synix"})
+
+    
+    _G.AUTOCLICK = false
+    _G.AUTOWIN = false
+    _G.REBIRTH = false 
+    _G.craft = false
+    _G.spins = false
+    _G.moedas = false 
+    _G.box    = false 
+    _G.extrasvitorias = false
+    _G.extravelocidade = false 
+    _G.extrapoder = false
+    _G.extrasorte = false
+    _G.extrasmochila = false
+    _G.extraheroi = false 
+    _G.extrasgemas = false
+
+
+
+      function extrasgemas()
+           while _G.extrasgemas do 
+             local args = {
+    [1] = "Gem"
+}
+
+game:GetService("ReplicatedStorage").Remote.Event.RebirthShop:FindFirstChild("[C-S]TryBuyShopProject"):FireServer(unpack(args))
+            wait(0.01)
+             end
+          end
+ 
+       function extraheroi()
+          while _G.extraheroi do 
+            local args = {
+    [1] = "EquipTotal"
+}
+
+game:GetService("ReplicatedStorage").Remote.Event.RebirthShop:FindFirstChild("[C-S]TryBuyShopProject"):FireServer(unpack(args))
+           wait(0.01)
+            end
+        end
+
+      function  extrasmochila()
+         while _G.extrasmochila do 
+            local args = {
+    [1] = "BackPackTotal"
+}
+
+game:GetService("ReplicatedStorage").Remote.Event.RebirthShop:FindFirstChild("[C-S]TryBuyShopProject"):FireServer(unpack(args))
+              wait(0.01)
+               end
+             end
+     
+      function extrasorte()
+        while _G.extrasorte do 
+          local args = {
+    [1] = "Luck"
+}
+
+game:GetService("ReplicatedStorage").Remote.Event.RebirthShop:FindFirstChild("[C-S]TryBuyShopProject"):FireServer(unpack(args))
+              wait(0.01)
+              end
+           end
+
+    function extrapoder()
+        while _G.extrapoder do
+           local args = {
+    [1] = "Power"
+}
+
+game:GetService("ReplicatedStorage").Remote.Event.RebirthShop:FindFirstChild("[C-S]TryBuyShopProject"):FireServer(unpack(args))
+                wait(0.01)
+                end
+            end
+
+      function extravelocidade()
+         while _G.extravelocidade do 
+             local args = {
+    [1] = "MovementSpeed"
+}
+
+game:GetService("ReplicatedStorage").Remote.Event.RebirthShop:FindFirstChild("[C-S]TryBuyShopProject"):FireServer(unpack(args))
+             wait (0.01)
+            end
+        end
+
+      function extrasvitorias()
+          while _G.extrasvitorias do
+             local args = {
+    [1] = "Wins"
+}
+
+game:GetService("ReplicatedStorage").Remote.Event.RebirthShop:FindFirstChild("[C-S]TryBuyShopProject"):FireServer(unpack(args))
+              wait(0.01)
+            end
+        end
+
+    function box()
+        while _G.box do 
+            game:GetService("ReplicatedStorage").Remote.Function.Equipment:FindFirstChild("[C-S]DoLuck"):InvokeServer()
+            wait(0.01)
+        end
+    end
+
+    function moedas()
+        while _G.moedas do 
+            local args = {
+                [3] = game:GetService("Players").LocalPlayer
+            }
+
+            game:GetService("ReplicatedStorage").Remote.Event.RebirthShop:FindFirstChild("[C-S]TryExchangeStar"):FireServer(unpack(args))
+            wait(5)
+        end
+    end
+
+    function spins()
+        while _G.spins do 
+            game:GetService("ReplicatedStorage").Remote.Function.Spin:FindFirstChild("[C-S]TrySpin"):InvokeServer()
+            wait(0.01)
+        end
+    end 
+
+    function craft()
+        while _G.craft do 
+            game:GetService("ReplicatedStorage").Remote.Event.Pet:FindFirstChild("[C-S]TryCraftAll"):FireServer()
+            wait(2)
+        end
+    end
+
+   
+    function REBIRTH()
+        while _G.REBIRTH do 
+            game:GetService("ReplicatedStorage").Remote.Event.Rebirth:FindFirstChild("[C-S]TryBuyRebirth"):FireServer()
+            wait(0.001)
+        end
+    end
+
+    function AUTOCLICK()
+        while _G.AUTOCLICK do
+            game:GetService("ReplicatedStorage").Remote.Event.Game:FindFirstChild("[C-S]PlayerClick"):FireServer()
+            wait(0.001)
+        end
+    end
+
+    function AUTOWIN()
+        while _G.AUTOWIN do
+            local args = {
+                [1] = true
+            }
+            game:GetService("ReplicatedStorage").Remote.Event.Game:FindFirstChild("[C-S]PlayerPKEnd"):FireServer(unpack(args))
+            wait(0.001)
+        end
+    end
+
+    local PLAYERTab = Window:MakeTab({
+    Name = "PLAYER",
+    Icon = "rbxassetid://14961970030",
+    PremiumOnly = false
+})
+
+local Section1 = PLAYERTab:AddSection({
+    Name = "AUTO-FARM"
+})
+
+local AUTOWINToggle = Section1:AddToggle({
+    Name = "CLICK",
+    Default = false,
+    Callback = function(Value)
+        _G.AUTOCLICK = Value
+        AUTOCLICK()
+    end
+})
+
+
+local AUTOWINToggle2 = Section2:AddToggle({
+    Name = "WIN",
+    Default = false,
+    Callback = function(Value)
+        _G.AUTOWIN = Value
+        AUTOWIN()
+    end
+})
+
+
+local AUTOWINToggle3 = PLAYERTab:AddToggle({
+    Name = " AUTO-SPINS",
+    Default = false,
+    Callback = function(Value)
+        _G.spins = Value
+        spins()
+    end
+})
+
+
+local AUTOWINToggle4 = PLAYERTab:AddToggle({
+    Name = "AUTO-BOX",
+    Default = false,
+    Callback = function(Value)
+        _G.box = Value
+        box()
+    end
+})
+
+
+local STATSTab = Window:MakeTab({
+    Name = "STATS",
+    Icon = "rbxassetid://14978617722",
+    PremiumOnly = false
+})
+
+local Section = STATSTab:AddSection({
+	Name = "AUTO-STATS"
+})
+STATSTab:AddToggle({
+	Name = "EXTRA VICTORY",
+	Default = false,
+	Callback = function(Value)
+		_G.extrasvitorias = Value
+          extrasvitorias()
+	end    
+})
+STATSTab:AddToggle({
+	Name = "EXTRA SPEED",
+	Default = false,
+	Callback = function(Value)
+		_G.extravelocidade = Value
+          extravelocidade()
+	end    
+})
+STATSTab:AddToggle({
+	Name = "EXTRA POWER",
+	Default = false,
+	Callback = function(Value)
+		_G.extrapoder = Value
+          extrapoder()
+	end    
+})
+STATSTab:AddToggle({
+	Name = "EXTRA LUCK",
+	Default = false,
+	Callback = function(Value)
+		_G.extrasorte = Value
+          extrasorte()
+	end    
+})
+STATSTab:AddToggle({
+	Name = "EXTRA STORAGE",
+	Default = false,
+	Callback = function(Value)
+		_G.extrasmochila = Value
+          extrasmochila()
+	end    
+})
+  STATSTab:AddToggle({
+	Name = "EXTRA HERO",
+	Default = false,
+	Callback = function(Value)
+		_G.extraheroi = Value
+          extraheroi()
+	end    
+})
+  STATSTab:AddToggle({
+	Name = "EXTRA GEMS",
+	Default = false,
+	Callback = function(Value)
+		_G.extrasgemas = Value
+          extrasgemas()
+	end    
+})
+    local REBIRTHTab = Window:MakeTab({
+    Name = "REBIRTH",
+    Icon = "rbxassetid://14961989839",
+    PremiumOnly = false
+})
+
+local Section3 = REBIRTHTab:AddSection({
+    Name = "AUTO-REBIRTH"
+})
+
+local AUTOWINToggle5 = Section3:AddToggle({
+    Name = "REBIRTH",
+    Default = false,
+    Callback = function(Value)
+        _G.REBIRTH = Value
+        REBIRTH()
+    end
+})
+
+local AUTOWINToggle6 = Section3:AddToggle({
+    Name = "REBIRTH, Trade for coins",
+    Default = false,
+    Callback = function(Value)
+        _G.moedas = Value
+        moedas()
+    end
+})
+
+
+    local TELEPORTETab = Window:MakeTab({
+    Name = "TELEPORT",
+    Icon = "rbxassetid://14878706595",
+    PremiumOnly = false
+})
+
+local Section4 = TELEPORTETab:AddSection({
+    Name = "Hero Fusion"
+})
+
+TELEPORTETab:AddButton({
+    Name = "Basic Fusion",
+    Callback = function()
+        game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-38.209964752197266, 3.412280559539795, -93.18862915039062))
+    end    
+})
+
+TELEPORTETab:AddButton({
+    Name = "Rainbow Fusion",
+    Callback = function()
+        game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-1098.6226806640625, 5.4082932472229, -114.86936950683594))
+    end    
+})
+
+TELEPORTETab:AddButton({
+    Name = "Enchantment Machine",
+    Callback = function()
+        game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-2219.190185546875, 3.429155111312866, 2.846680164337158))
+    end    
+})
+
+TELEPORTETab:AddButton({
+    Name = "Market",
+    Callback = function()
+        game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-975.64013671875, 3.4519155025482178, 5.904914379119873))
+    end    
+})
+
+TELEPORTETab:AddButton({
+    Name = "INDEX",
+    Callback = function()
+        game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-1071.794677734375, 3.390293836593628, -124.89149475097656))
+    end    
+})
+
+local Section5 = TELEPORTETab:AddSection({
+    Name = "World 1"
+})
+
+TELEPORTETab:AddButton({
+    Name = "World 1",
+    Callback = function()
+        game.Players.LocalPlayer.Character:MoveTo(Vector3.new(7.276587009429932, 4.696347713470459, -24.665294647216797))
+    end    
+})
+
+TELEPORTETab:AddButton({
+    Name = "KI",
+    Callback = function()
+        game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-80.84418487548828, 4.411097049713135, 2.6888773441314697))
+    end    
+})
+
+TELEPORTETab:AddButton({
+    Name = "Sword",
+    Callback = function()
+        game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-80.97555541992188, 4.411097049713135, -32.38487243652344))
+    end    
+})
+
+local Section6 = TELEPORTETab:AddSection({
+    Name = "World 2"
+})
+
+TELEPORTETab:AddButton({
+    Name = "World 2",
+    Callback = function()
+        game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-1015.7450561523438, 3.0027947425842285, -54.538902282714844))
+    end    
+})
+
+TELEPORTETab:AddButton({
+    Name = "KI",
+    Callback = function()
+        game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-1101.1051025390625, 4.411097049713135, -36.45041275024414))
+    end    
+})
+
+TELEPORTETab:AddButton({
+    Name = "Sword",
+    Callback = function()
+        game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-1101.3720703125, 4.411097526550293, -70.92388916015625))
+    end    
+})
+
+local Section7 = TELEPORTETab:AddSection({
+    Name = "World 3"
+})
+
+TELEPORTETab:AddButton({
+    Name = "World 3",
+    Callback = function()
+        game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-2159.73388671875, 3.0027949810028076, 45.288673400878906))
+    end    
+})
+
+TELEPORTETab:AddButton({
+    Name = "KI",
+    Callback = function()
+        game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-2239.326416015625, 4.411097049713135, 67.26565551757812))
+    end    
+})
+
+TELEPORTETab:AddButton({
+    Name = "Sword",
+    Callback = function()
+        game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-2239.15869140625, 4.411097049713135, 30.89033317565918))
+    end    
+})
+
+local Section8 = TELEPORTETab:AddSection({
+    Name = "World 4"
+})
+
+TELEPORTETab:AddButton({
+    Name = "World 4",
+    Callback = function()
+        game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-3137.26904296875, 6.564809322357178, 45.28111267089844))
+    end    
+})
+
+TELEPORTETab:AddButton({
+    Name = "KI",
+    Callback = function()
+        game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-3227.93798828125, 6.911097526550293, 64.88733673095703))
+    end    
+})
+
+TELEPORTETab:AddButton({
+    Name = "Sword",
+    Callback = function()
+        game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-3226.418701171875, 6.911097526550293, 31.34856605529785))
+    end    
+})
+
+local Section9 = TELEPORTETab:AddSection({
+    Name = "World 5"
+})
+
+TELEPORTETab:AddButton({
+    Name = "World 5",
+    Callback = function()
+        game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-4116.3505859375, 5.912228107452393, 52.74848175048828))
+    end    
+})
+
+TELEPORTETab:AddButton({
+    Name = "KI",
+    Callback = function()
+        game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-4187.3857421875, 6.411097526550293, 65.18522644042969))
+    end    
+})
+
+TELEPORTETab:AddButton({
+    Name = "Sword",
+    Callback = function()
+        game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-4187.63037109375, 6.411097526550293, 29.383779525756836))
+    end    
+})
+
+local Section10 = TELEPORTETab:AddSection({
+    Name = "World 6"
+})
+
+TELEPORTETab:AddButton({
+    Name = "World 6",
+    Callback = function()
+        game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-4967.453125, 7.014700412750244, 30.156116485595703))
+    end
+})
+
+TELEPORTETab:AddButton({
+    Name = "KI",
+    Callback = function()
+        game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-5038.85498046875, 6.392682075500488, 43.08150863647461))
+    end    
+})
+
+TELEPORTETab:AddButton({
+    Name = "Sword",
+    Callback = function()
+        game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-5038.5712890625, 6.411097526550293, 7.281553268432617))
+    end    
+})
+
+
+local EGGSTab = Window:MakeTab({
+    Name = "EGGS",
+    Icon = "rbxassetid://14978554834",
+    PremiumOnly = false
+})
+
+local Section5 = EGGSTab:AddSection({
+    Name = "EGGS"
+})
+
+local eggNumber = "EVENTOEGG"
+local openingEgg = false
+
+local EggScripts = {
+    EVENTOEGG = function()
+        local args = {
+            [1] = "E900"
+        }
+        game:GetService("ReplicatedStorage").Remote.Event.Events:FindFirstChild("[C-S]TryGetEventReward"):FireServer(unpack(args))
+    end,
+    EGG1 = function()
+        local args = {
+            [1] = "Egg1"
+        }
+        game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+    end,
+    EGG2 = function()
+        local args = {
+            [1] = "Egg2"
+        }
+        game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+    end,
+    EGG3 = function()
+        local args = {
+            [1] = "Egg3"
+        }
+        game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+    end,
+    EGG4 = function()
+        local args = {
+            [1] = "Egg4"
+        }
+        game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+    end,
+    EGG5 = function()
+        local args = {
+            [1] = "Gem1"
+        }
+        game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+    end,
+    EGG6 = function()
+        local args = {
+            [1] = "Egg6"
+        }
+        game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+    end,
+    EGG7 = function()
+        local args = {
+            [1] = "Egg7"
+        }
+        game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+    end,
+    EGG8 = function()
+        local args = {
+            [1] = "Egg8"
+        }
+        game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+    end,
+    EGG9 = function()
+        local args = {
+            [1] = "Egg9"
+        }
+        game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+    end,
+    EGG10 = function()
+        local args = {
+            [1] = "Egg10"
+        }
+        game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+    end,
+    EGG11 = function()
+        local args = {
+            [1] = "Egg11"
+        }
+        game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+    end,
+    EGG12 = function()
+        local args = {
+            [1] = "Egg12"
+        }
+        game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+    end,
+    EGG13 = function()
+        local args = {
+            [1] = "Egg13"
+        }
+        game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+    end,
+    EGG14 = function()
+        local args = {
+            [1] = "Egg14"
+        }
+        game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+    end,
+    EGG15 = function()
+        local args = {
+            [1] = "Egg15"
+        }
+        game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+    end,
+    EGG16 = function()
+        local args = {
+            [1] = "Egg16"
+        }
+        game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+    end,
+    EGG17 = function()
+        local args = {
+            [1] = "Egg17"
+        }
+        game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+    end,
+    EGG18 = function()
+        local args = {
+            [1] = "Egg18"
+        }
+        game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+    end,
+    EGG19 = function()
+        local args = {
+            [1] = "Egg19"
+        }
+        game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+    end,
+    EGG20 = function()
+        local args = {
+            [1] = "Egg20"
+        }
+        game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+    end,
+    EGG21 = function()
+        local args = {
+            [1] = "Egg21"
+        }
+        game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+    end,
+    EGG22 = function()
+        local args = {
+            [1] = "Egg22"
+        }
+        game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+    end,
+    EGG23 = function()
+        local args = {
+            [1] = "Egg23"
+        }
+        game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+    end,
+    EGG24 = function()
+        local args = {
+            [1] = "Egg24"
+        }
+        game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+    end,
+    EGG25 = function()
+        local args = {
+            [1] = "Egg25"
+        }
+        game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+    end,
+    EGG26 = function()
+        local args = {
+            [1] = "Egg26"
+        }
+        game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+    end,
+    EGG27 = function()
+        local args = {
+            [1] = "Egg27"
+        }
+        game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+    end,
+    EGG28 = function()
+        local args = {
+            [1] = "Egg28"
+        }
+        game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+    end,
+    EGG29 = function()
+        local args = {
+            [1] = "Egg29"
+        }
+        game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+    end,
+    EGG30 = function()
+        local args = {
+            [1] = "Egg30"
+        }
+        game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+    end
+}
+
+local eggOptions = {}  -- Armazenar opções de ovos para o dropdown
+
+for eggName, _ in pairs(EggScripts) do
+    table.insert(eggOptions, eggName)  -- Adicionar o nome do ovo às opções do dropdown
+end
+
+EGGSTab:AddDropdown({
+    Name = "Select Egg",
+    Default = "EVENTOEGG",
+    Options = {"EVENTOEGG", "EGG1", "EGG2", "EGG3", "EGG4", "EGG5", "EGG6", "EGG7", "EGG8", "EGG9", "EGG10", "EGG11",
+    "EGG12", "EGG13", "EGG14", "EGG15", "EGG16", "EGG17", "EGG18", "EGG19", "EGG20", "EGG21", "EGG22", "EGG23", "EGG24", 
+       "EGG25", "EGG26", "EGG27", "EGG28", "EGG29", "EGG30"}, 
+     
+    Callback = function(Value)
+        eggNumber = Value
+    end
+})
+
+EGGSTab:AddToggle({
+    Name = "Open Eggs",
+    Default = false,
+    Callback = function(Value)
+        if Value then
+            openingEgg = true
+            while openingEgg do
+                local eggScript = EggScripts[eggNumber]
+
+                if eggScript then
+                    eggScript()
+                end
+
+                wait(0.001)
+            end
+        else
+            openingEgg = false
+        end
+    end
+})
+local Section = EGGSTab:AddSection({
+    Name = "Craft All"
+})
+
+EGGSTab:AddToggle({
+    Name = "Craft All",
+    Default = false,
+    Callback = function(Value)
+        _G.craft = Value
+        craft()
+    end    
+})
+
+    local ABOUTTab = Window:MakeTab({
+    Name = "ABOUT",
+    Icon = "rbxassetid://14878733485",
+    PremiumOnly = false
+})
+
+       local Section = ABOUTTab:AddSection({
+	Name = "ㅤ   ㅤㅤ   ㅤㅤ   ㅤㅤ   ㅤㅤ   ㅤㅤSYNIX (BETA)"  
+})
+       local Section = ABOUTTab:AddSection({
+	Name = "                       Developers: RayzMods | Hagoromo"
+})
+
+     local Section = ABOUTTab:AddSection({
+	Name = "Hello, thank you for using 'SyniX - Energy-shock-simulator' in your beta."
+})
+
+local Section = ABOUTTab:AddSection({
+	Name = ""
+})
+
+ABOUTTab:AddButton({
+	Name = "ㅤ   ㅤㅤ   ㅤㅤ   ㅤㅤ      ㅤㅤSocial networks ",
+	Callback = function()
+      setclipboard("https://stanti.com.br/synix")
+  OrionLib:MakeNotification({	Name = "SyniX HUB",
+	Content = "Copied site link",
+	Image = "rbxassetid://14962257286",
+	Time = 5
+})
+        
+        end    
+})
+  
+ABOUTTab:AddButton({
+
+
+	Name = "ㅤ   ㅤㅤ   ㅤㅤ   ㅤㅤ      ㅤ       ㅤDiscord ",
+	Callback = function()
+     setclipboard("https://discord.gg/svnCNEj8hW")
+      OrionLib:MakeNotification({	Name = "SyniX HUB",
+	Content = "Copied Discord link",
+	Image = "rbxassetid://14962192917",
+	Time = 5
+})
+       
+       end    
+})
+ OrionLib:Init()
+end
