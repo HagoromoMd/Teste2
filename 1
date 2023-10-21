@@ -343,6 +343,22 @@ TELEPORTETab:AddButton({
     end    
 })
 
+local Section11 = TELEPORTETab:AddSection({
+    Name = "EVENTO HALLOWEEN"
+})
+
+TELEPORTETab:AddButton({
+    Name = "HALLOWEEN",
+    Callback = function()
+        local args = {
+    [1] = workspace.Check.ToHalloween
+}
+
+game:GetService("ReplicatedStorage").Remote.Event.Game:FindFirstChild("[C-S]PlayerTP"):FireServer(unpack(args))
+
+    end    
+})
+
 local Section5 = TELEPORTETab:AddSection({
     Name = "World 1"
 })
